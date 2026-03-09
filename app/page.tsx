@@ -5,10 +5,24 @@ import FadeContent from "./comp/FadeContent";
 import AnimatedContent from "./comp/AnimatedContent";
 import Particles from './comp/Particles';
 import { ReactLenis } from 'lenis/react'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 
 export default function Home() {
   const [e, ee] = useState(false);
+  useEffect(() => {
+    const ua = window.navigator.userAgent;
+    const isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+    if (isIOS) {
+      const vmatch = ua.match(/OS (\d+)_(\d+)_?(\d+)?/);
+      if (vmatch) {
+        const major = parseInt(vmatch[1], 10);
+        const minor = parseInt(vmatch[2], 10);
+        if (major < 15 || (major === 15 && minor < 4)) {
+          window.location.href = "https://legacy.jessimc.dev";
+        }
+      }
+    }
+  }, []);
   return (
     <section className="relative h-[100vh]"><ReactLenis root options={{ lerp: 0.05, duration: 2 }}>
       <div style={{ width: '100%', height: '100%', position: 'fixed', overflow: 'auto', zIndex: '-1'}}>

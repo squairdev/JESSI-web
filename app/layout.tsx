@@ -13,9 +13,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  title: 'JESSI',
   openGraph: {
     title: 'JESSI - Minecraft server on iOS',
     description: 'JESSI is an app that lets you host Minecraft servers directly on your device.',
+    images: [
+      {
+        url: '/opengraph-image.png',
+        width: 64,
+        height: 64,
+      },
+    ],
   },
 }
 
@@ -29,9 +37,6 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://use.typekit.net" />
         <link rel="stylesheet" href="https://use.typekit.net/taj5rlj.css" />
-        <meta property="og:image" content="/opengraph-image.png" />
-        <meta property="og:image:width" content="64" />
-        <meta property="og:image:height" content="64" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         {children}
