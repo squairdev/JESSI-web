@@ -43,22 +43,25 @@ export default function Home() {
               <BlurText text="JESSI" direction="bottom" delay={100} className="" />
             </div>
             <div className='mx-auto pt-7 text-[1.3rem] sm:text-[1.5rem] max-w-[80vw] lg:max-w-[20vw] text-[#ababab] pb-10'>
-            <AnimatedContent direction="horizontal" distance={50} delay={0.8} scale={0.7}>
-              <svg className='absolute' style={{transform: "translate(-100%, -100%)"}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M460-160v-300H160v-40h300v-300h40v300h300v40H500v300h-40Z"/></svg>
-            </AnimatedContent>
-            <FadeContent blur delay={1} duration={0.76}>{"Your favourite Minecraft server, now made for iOS."}</FadeContent>
-            <div style={{flexGrow:"1"}}/>
-            <AnimatedContent reverse direction="horizontal" distance={50} delay={0.8} scale={0.7}>
-              <svg style={{transform: "translate(50%, -0%)", marginLeft: 'auto'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M460-160v-300H160v-40h300v-300h40v300h300v40H500v300h-40Z"/></svg>
-            </AnimatedContent>
-            <div className='flex pt-5'>
-              <FadeContent blur delay={0.5} duration={0.7} className='z-1 flex items-center justify-center mx-auto w-[10rem] h-[3.5rem] bg-emerald-900/20 border-solid border-4 border-emerald-900/50 rounded-l-2xl hover:border-emerald-700/25 hover:bg-emerald-600/15 transition-all duration-300 ease-in-out text-lg cursor-pointer'>
-              GitHub<a href='https://github.com/Baconium/JESSI' target='_blank' className='absolute w-[10rem] h-[3.5rem]'></a>
-            </FadeContent> 
-            <FadeContent blur delay={0.5} duration={0.9} className='flex items-center justify-center mx-auto w-[10rem] h-[3.5rem] bg-emerald-900/20 border-solid border-4 border-emerald-900/50 rounded-r-2xl hover:border-emerald-700/25 hover:bg-emerald-600/15 transition-all duration-300 ease-in-out text-lg cursor-pointer'>
-              Discord<a href='https://discord.gg/yY3rRqmvHr' target='_blank' className='absolute w-[10rem] h-[3.5rem]'></a>
-            </FadeContent>
-            </div>
+              <AnimatedContent direction="horizontal" distance={50} delay={0.8} scale={0.7}>
+                <svg className='absolute' style={{transform: "translate(-100%, -100%)"}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M460-160v-300H160v-40h300v-300h40v300h300v40H500v300h-40Z"/></svg>
+              </AnimatedContent>
+              <FadeContent blur delay={1} duration={0.76}>{"Your Minecraft servers, now inside iOS."}</FadeContent>
+              <div style={{flexGrow:"1"}}/>
+              <AnimatedContent reverse direction="horizontal" distance={50} delay={0.8} scale={0.7}>
+                <svg style={{transform: "translate(50%, -0%)", marginLeft: 'auto'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M460-160v-300H160v-40h300v-300h40v300h300v40H500v300h-40Z"/></svg>
+              </AnimatedContent>
+              <div className='flex pt-5'>
+                <FadeContent blur delay={0.5} duration={0.7} className='z-1 flex items-center justify-center mx-auto w-[10rem] h-[3.5rem] bg-emerald-900/20 border-solid border-4 border-emerald-900/50 rounded-l-2xl hover:border-emerald-700/25 hover:bg-emerald-600/15 transition-all duration-300 ease-in-out text-lg cursor-pointer'>
+                GitHub<a href='https://github.com/Baconium/JESSI' target='_blank' className='absolute w-[10rem] h-[3.5rem]'></a>
+                </FadeContent> 
+                <FadeContent blur delay={0.5} duration={0.8} className='z-1 flex items-center justify-center mx-auto w-[10rem] h-[3.5rem] bg-emerald-900/20 border-solid border-4 border-emerald-900/50 hover:border-emerald-700/25 hover:bg-emerald-600/15 transition-all duration-300 ease-in-out text-lg cursor-pointer'>
+                Havoc<a href='https://havoc.app/package/jessi' target='_blank' className='absolute w-[10rem] h-[3.5rem]'></a>
+                </FadeContent> 
+                <FadeContent blur delay={0.5} duration={0.9} className='flex items-center justify-center mx-auto w-[10rem] h-[3.5rem] bg-emerald-900/20 border-solid border-4 border-emerald-900/50 rounded-r-2xl hover:border-emerald-700/25 hover:bg-emerald-600/15 transition-all duration-300 ease-in-out text-lg cursor-pointer'>
+                Discord<a href='https://discord.gg/yY3rRqmvHr' target='_blank' className='absolute w-[10rem] h-[3.5rem]'></a>
+                </FadeContent>
+              </div>
             </div>
           </div>
           <div>
@@ -120,14 +123,6 @@ export default function Home() {
           <p>Website Developer</p>
           <div className='flex gap-5 z-[100]'>
           <a className='text-sky-300' href='https://squair.xyz' target='_blank'>Website</a><a className='text-sky-300' href='https://github.com/squairdev' target='_blank'>GitHub</a>
-          </div>
-        </FadeContent>
-        <FadeContent blur delay={0} duration={1.1} className='bg-emerald-900/20 border-solid border-4 border-emerald-900/50 rounded-2xl flex flex-col items-center justify-center py-3 px-10'>
-          <img src={'https://github.com/peroka-net.png'} className='w-[8rem] rounded-full p-3'/>
-          <p className='text-lg'>procurs.us</p>
-          <p>JESSI Mascot</p>
-          <div className='flex gap-5 z-[100]'>
-          <a className='text-sky-300' href='https://github.com/peroka-net' target='_blank'>GitHub</a>
           </div>
         </FadeContent>
       </section>

@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'JESSI',
   openGraph: {
-    title: 'JESSI - Minecraft server on iOS',
-    description: 'JESSI is an app that lets you host Minecraft servers directly on your device.',
+    title: 'JESSI - Minecraft servers on iOS',
+    description: 'Host Minecraft servers directly on your device.',
     images: [
       {
         url: '/opengraph-image.png',
