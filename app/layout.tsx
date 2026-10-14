@@ -13,6 +13,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://jessimc.dev'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/en-US'
+    },
+  },
   title: 'JESSI',
   openGraph: {
     title: 'JESSI - Minecraft servers on iOS',

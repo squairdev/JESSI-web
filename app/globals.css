@@ -3,8 +3,6 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 :root {
@@ -18,7 +16,7 @@ html {
   font-family: "futura-100", sans-serif;
   font-weight: 500;
   font-style: normal;
-  user-select: none;
+  overflow-x: hidden;
 }
 html, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb{
   scrollbar-color: #004f3b #000000;

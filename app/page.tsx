@@ -1,14 +1,9 @@
 'use client'
-import GradualBlur from './comp/GradualBlur';
-import BlurText from "./comp/BlurText";
-import FadeContent from "./comp/FadeContent";
-import AnimatedContent from "./comp/AnimatedContent";
-import Particles from './comp/Particles';
+import FlipCard from './comp/FlipCard'
 import { ReactLenis } from 'lenis/react'
 import {useState,useEffect} from 'react'
 
 export default function Home() {
-  const [e, ee] = useState(false);
   useEffect(() => {
     const ua = window.navigator.userAgent;
     const isIOS = /iPad|iPhone|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
@@ -23,129 +18,78 @@ export default function Home() {
       }
     }
   }, []);
+  const btnstyl = 'z-1 flex items-center justify-center mx-auto w-[10rem] h-[3.5rem] bg-emerald-900/60 border-solid border-emerald-900/80 hover:bg-emerald-600/80 transition-all duration-200 ease-out text-lg'
   return (
-    <section className="relative h-[100vh]"><ReactLenis root options={{ lerp: 0.05, duration: 2 }}>
-      <div style={{ width: '100%', height: '100%', position: 'fixed', overflow: 'auto', zIndex: '-1'}}>
-        <Particles
-          particleColors={["#26a269"]}
-          particleCount={1000}
-          particleSpread={30}
-          speed={0.05}
-          particleBaseSize={200}
-          alphaParticles
-          pixelRatio={1}
-      />
-      </div>
-      <section className='-z-1 h-[100%] max-[960px]:h-[100%] flex gap-50 items-center justify-center'>
-        <FadeContent blur delay={0} duration={0.76} className='py-10 px-15 max-[960px]:flex-col max-[960px]:gap-0 flex gap-50 self-center items-center justify-center rounded-[60px]'>
-          <div className='max-w-2xl'>
-            <div className='text-7xl font-bold mb-4 leading-20 mx-auto'>
-              <BlurText text="JESSI" direction="bottom" delay={100} className="" />
+    <section className="relative h-[100vh] max-w-[100vw]">
+      <ReactLenis root options={{ lerp: 0.05, duration: 2 }}>
+        <section className='w-full h-full flex flex-col sm:flex-row sm:gap-50 justify-center items-center sm:-mt-0 -mt-10'>
+          <div className='absolute sm:static sm:flex flex-col justify-center items-center sm:items-start gap-7.5 z-1 '>
+            <div className='flex flex-col gap-5 justify-center items-center sm:items-start'>
+              <p className='text-5xl sm:text-8xl font-bold'>JESSI</p>
+              <p className='text-xl sm:text-4xl text-gray-200'>Run Minecraft servers natively on iOS.</p>
             </div>
-            <div className='mx-auto pt-7 text-[1.3rem] sm:text-[1.5rem] max-w-[80vw] lg:max-w-[20vw] text-[#ababab] pb-10'>
-              <AnimatedContent direction="horizontal" distance={50} delay={0.8} scale={0.7}>
-                <svg className='absolute' style={{transform: "translate(-100%, -100%)"}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M460-160v-300H160v-40h300v-300h40v300h300v40H500v300h-40Z"/></svg>
-              </AnimatedContent>
-              <FadeContent blur delay={1} duration={0.76}>{"Your Minecraft servers, now inside iOS."}</FadeContent>
-              <div style={{flexGrow:"1"}}/>
-              <AnimatedContent reverse direction="horizontal" distance={50} delay={0.8} scale={0.7}>
-                <svg style={{transform: "translate(50%, -0%)", marginLeft: 'auto'}} xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M460-160v-300H160v-40h300v-300h40v300h300v40H500v300h-40Z"/></svg>
-              </AnimatedContent>
-              <div className='flex pt-5'>
-                <FadeContent blur delay={0.5} duration={0.7} className='z-1 flex items-center justify-center mx-auto w-[10rem] h-[3.5rem] bg-emerald-900/20 border-solid border-4 border-emerald-900/50 rounded-l-2xl hover:border-emerald-700/25 hover:bg-emerald-600/15 transition-all duration-300 ease-in-out text-lg cursor-pointer'>
-                GitHub<a href='https://github.com/Baconium/JESSI' target='_blank' className='absolute w-[10rem] h-[3.5rem]'></a>
-                </FadeContent> 
-                <FadeContent blur delay={0.5} duration={0.8} className='z-1 flex items-center justify-center mx-auto w-[10rem] h-[3.5rem] bg-emerald-900/20 border-solid border-4 border-emerald-900/50 hover:border-emerald-700/25 hover:bg-emerald-600/15 transition-all duration-300 ease-in-out text-lg cursor-pointer'>
-                Havoc<a href='https://havoc.app/package/jessi' target='_blank' className='absolute w-[10rem] h-[3.5rem]'></a>
-                </FadeContent> 
-                <FadeContent blur delay={0.5} duration={0.9} className='flex items-center justify-center mx-auto w-[10rem] h-[3.5rem] bg-emerald-900/20 border-solid border-4 border-emerald-900/50 rounded-r-2xl hover:border-emerald-700/25 hover:bg-emerald-600/15 transition-all duration-300 ease-in-out text-lg cursor-pointer'>
-                Discord<a href='https://discord.gg/yY3rRqmvHr' target='_blank' className='absolute w-[10rem] h-[3.5rem]'></a>
-                </FadeContent>
+            <div className='scale-75 sm:scale-100 mt-5 sm:mt-0 flex'>
+              <a className={`border-l-2 border-t-2 border-b-2 rounded-l-2xl ${btnstyl}`} href='https://havoc.app/package/jessi' target='_blank'>Havoc</a>
+              <a className={`border-2 ${btnstyl}`} href='https://github.com/Baconium/JESSI/releases/latest/download/JESSI.ipa' target='_blank'>Download</a>
+              <a className={`border-r-2 border-t-2 border-b-2 rounded-r-2xl ${btnstyl}`} href='https://altdirect.app/?url=https://github.com/Baconium/JESSI/releases/download/source/source.json' target='_blank'>AltSource</a>
+            </div>
+            <p className='text-center mt-5 sm:mt-0 [&>a]:mx-3 text-gray-300'><a href='https://github.com/Baconium/JESSI' target='_blank'>GitHub</a> • <a href='https://discord.gg/yY3rRqmvHr' target='_blank'>Discord</a></p>
+          </div>
+          <FlipCard className='absolute inset-0 my-auto opacity-30 scale-80 blur-[4px] sm:blur-[0px] sm:scale-100 sm:opacity-100 sm:static w-100 h-100' front={<img src='/opengraph-image.png' className='max-w-100 rounded-[16%]'/>} back={<img src='/JESSI.png' className='w-full'/>} axis="y" glareOpacity={0} tilt={false} flipOnClick draggable={false} hoverScale={0.995} stiffness={170} damping={20} background="#00000000" shadowOpacity={0}/>
+          <div className='absolute inset-x-0 mx-auto  bottom-15 w-20 h-20 flex flex-col justify-center items-center'>
+            <svg className='w-7.5' xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#ffffff"><path d="M440-800v487L216-537l-56 57 320 320 320-320-56-57-224 224v-487h-80Z"/></svg>
+            <p className='text-lg'>more</p>
+          </div>
+        </section>
+
+        <section className='w-full h-full flex flex-col gap-50 justify-center items-center' id='about'>
+          <img src='/Server_Status.png' className='rotate-35 w-[50vw] sm:w-1/5 opacity-35 blur-[1.2px] z-0 absolute'/>
+          <div className='flex flex-col gap-5 justify-center items-center z-1'>
+            <p className='text-5xl sm:text-6xl font-bold'>What is JESSI?</p>
+            <p className='text-xl sm:text-2xl max-w-[80vw] sm:max-w-140 text-center text-gray-200'>JESSI, "Java Edition Servers Suck on iOS", is a jailed app that runs Minecraft: Java Edition servers natively on iOS, targeting iOS 14+. While JESSI can run on non-jailbroken devices, it requires JIT to be enabled in order to actually function.</p>
+          </div>
+        </section>
+
+        <section className='w-full h-full flex flex-col sm:flex-row gap-50 justify-center items-center' id='playit'>
+          <div className='flex flex-col gap-5 justify-center items-center z-1'>
+            <p className='text-5xl sm:text-6xl font-bold'>Playit and UPnP</p>
+            <p className='text-xl sm:text-2xl max-w-[80vw] sm:max-w-140 text-center text-gray-200'>You can port-forward your Minecraft server with Playit or UPnP easily.</p>
+          </div>
+          <img src='/Playit.png' className='sm:w-1/6 sm:static absolute w-[50vw] opacity-35 sm:opacity-100 blur-[1.2px] sm:blur-[0px] -rotate-25 sm:rotate-0'/>
+        </section>
+
+        <section className='w-full h-full flex gap-50 justify-center items-center' id='credits'>
+          <div className='flex flex-col gap-10 h-full justify-center items-center z-1'>
+            <p className='text-5xl sm:text-6xl font-bold'>Credits</p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 sm:grid-rows-1 gap-5 scale-92 sm:scale-100">
+              <div className='w-48 py-6 rounded-3xl bg-emerald-900/60 flex flex-col gap-2 justify-center items-center border-emerald-900/80 border-2'>
+                <img src='https://avatars.githubusercontent.com/u/226291448' className='rounded-full w-30'/>
+                <p>BaconMania</p>
+                <p>Lead developer</p>
+                <p className='[&>a]:mx-2'><a href='https://baconium.dev' target='_blank'>Website</a> • <a href='https://github.com/Baconium' target='_blank'>GitHub</a></p>
+              </div>
+              <div className='w-48 py-6 rounded-3xl bg-emerald-900/60 flex flex-col gap-2 justify-center items-center border-emerald-900/80 border-2'>
+                <img src='https://avatars.githubusercontent.com/u/103732419' className='rounded-full w-30'/>
+                <p>Roooot</p>
+                <p>Co-developer</p>
+                <p className='[&>a]:mx-2'><a href='https://roooot.dev' target='_blank'>Website</a> • <a href='https://github.com/rooootdev' target='_blank'>GitHub</a></p>
+              </div>
+              <div className='w-48 py-6 rounded-3xl bg-emerald-900/60 flex flex-col gap-2 justify-center items-center border-emerald-900/80 border-2'>
+                <img src='https://avatars.githubusercontent.com/u/151537466' className='rounded-full w-30'/>
+                <p>Squair</p>
+                <p>Website developer</p>
+                <p className='[&>a]:mx-2'><a href='https://squair.xyz' target='_blank'>Website</a> • <a href='https://github.com/squairdev' target='_blank'>GitHub</a></p>
+              </div>
+              <div className='w-48 py-6 rounded-3xl bg-emerald-900/60 flex flex-col gap-2 justify-center items-center border-emerald-900/80 border-2'>
+                <img src='https://avatars.githubusercontent.com/u/180266120' className='rounded-full w-30'/>
+                <p>Fil</p>
+                <p>Stupid idiot</p>
+                <p>Fuck you fil</p>
               </div>
             </div>
           </div>
-          <div>
-            <FadeContent blur delay={0.4} duration={0.7}><img src={'Server_Status.png'} className='mx-auto w-[20rem] rounded-[16%] rotate-20 transition-all duration-300 ease-in-out max-[960px]:w-[13rem]'/></FadeContent>
-          </div>
-        </FadeContent>
-      </section>
-
-      <section className='z-0 w-[100vw] h-[60%] flex items-center justify-center max-[1400px]:pt-100 max-[1400px]:pb-150 pb-50 gap-15 text-[#ababab]'>
-        <FadeContent blur delay={0} duration={0.5} className='flex gap-20 items-center justify-center max-[1400px]:flex-col'>
-          <FadeContent blur delay={0} duration={0.6}>
-          <img src={'opengraph-image.png'} className='w-[20rem] rounded-[16%] max-[1400px]:w-[10rem]'/>
-          </FadeContent>
-          <div className='flex flex-col gap-10 w-[20%] max-[1400px]:w-[60%]'>
-            <FadeContent blur delay={0} duration={0.7} className='text-center text-3xl font-bold'>What is JESSI?</FadeContent>
-            <FadeContent blur delay={0} duration={0.9} className='text-lg text-left max-[1400px]:text-center'>JESSI is a jailed app that runs Minecraft: Java Edition servers natively on iOS, targeting iOS 14+. While JESSI can run on non jailbroken devices, it requires JIT to be enabled in order to actually function.</FadeContent>
-            <FadeContent blur delay={0} duration={0.9} className='flex items-center justify-center mx-auto px-3 h-[3.5rem] bg-emerald-900/20 border-solid border-4 border-emerald-900/50 rounded-2xl hover:border-emerald-700/25 hover:bg-emerald-600/15 transition-all duration-300 ease-in-out text-lg cursor-pointer'>
-              Download latest version<a href='https://github.com/Baconium/JESSI/releases/latest/download/JESSI.ipa' className='absolute w-[10rem] h-[3.5rem]'></a>
-            </FadeContent>
-          </div>
-        </FadeContent>
-      </section>
-
-      <section className='z-0 w-[100vw] h-[60%] flex items-center justify-center max-[1400px]:pt-100 max-[1400px]:pb-150 pb-50 gap-10 text-[#ababab]'>
-        <FadeContent blur delay={0} duration={0.5} className='flex gap-50 max-[1400px]:gap-20 items-center justify-center max-[1400px]:flex-col'>
-          <div className='flex flex-col gap-10 w-[20%] max-[1400px]:w-[60%]'>
-            <FadeContent blur delay={0} duration={0.7} className='text-center text-3xl font-bold'>Playit and UPnP integration</FadeContent>
-            <FadeContent blur delay={0} duration={0.9} className='text-lg text-left max-[1400px]:text-center'>You can port forward your Minecraft server using Playit.gg or UPnP.</FadeContent>
-          </div>
-          <FadeContent blur delay={0} duration={0.6}>
-          <img src={'Playit.png'} className='w-[17rem] max-[1400px]:w-[10rem]'/>
-          </FadeContent>
-        </FadeContent>
-      </section>
-
-      <p className='text-center text-3xl pb-5 pt-30'>Credits</p>
-      <section className='w-[100vw] flex items-center justify-center gap-10 max-[1100px]:flex-wrap pb-30'>
-        <FadeContent blur delay={0} duration={0.7} className='bg-emerald-900/20 border-solid border-4 border-emerald-900/50 rounded-2xl flex flex-col items-center justify-center py-3 px-10'>
-          <img onClick={() => ee(prev => !prev)} src={'JESSI.png'} className='cursor-pointer absolute right-55 max-[1400px]:right-25 bottom-0 max-[1400px]:bottom-58 max-[1400px]:w-[6rem] z-[2000] opacity-25 hover:opacity-75 transition-all duration-300 ease-in-out' alt='JESSI Mascot'/>
-          <p className={`${e?'visible':'invisible'} absolute right-56 max-[1400px]:right-10 top-56 max-[1400px]:-top-6 text-center w-full`}>Jadix's Girlfriend</p>
-          <img src={'https://github.com/Baconium.png'} className='w-[8rem] rounded-full p-3'/>
-          <p className='text-lg'>BaconMania</p>
-          <p>Lead Developer</p>
-          <div className='flex gap-5 z-[100]'>
-          <a className='text-sky-300' href='https://github.com/Baconium' target='_blank'>GitHub</a>
-          </div>
-        </FadeContent>
-        <FadeContent blur delay={0} duration={0.9} className='bg-emerald-900/20 border-solid border-4 border-emerald-900/50 rounded-2xl flex flex-col items-center justify-center py-3 px-10'>
-          <img src={'https://github.com/rooootdev.png'} className='w-[8rem] rounded-full p-3'/>
-          <p className='text-lg'>roooot</p>
-          <p>Co-Developer</p>
-          <div className='flex gap-5 z-[100]'>
-          <a className='text-sky-300' href='https://roooot.dev' target='_blank'>Website</a><a className='text-sky-300' href='https://github.com/rooootdev' target='_blank'>GitHub</a>
-          </div>
-        </FadeContent>
-        <FadeContent blur delay={0} duration={1.1} className='bg-emerald-900/20 border-solid border-4 border-emerald-900/50 rounded-2xl flex flex-col items-center justify-center py-3 px-10'>
-          <img src={'https://github.com/squairdev.png'} className='w-[8rem] rounded-full p-3'/>
-          <p className='text-lg'>Squair</p>
-          <p>Website Developer</p>
-          <div className='flex gap-5 z-[100]'>
-          <a className='text-sky-300' href='https://squair.xyz' target='_blank'>Website</a><a className='text-sky-300' href='https://github.com/squairdev' target='_blank'>GitHub</a>
-          </div>
-        </FadeContent>
-      </section>
-      <GradualBlur
-        target="page"
-        position="bottom"
-        height="6rem"
-        strength={2}
-        divCount={5}
-        curve="bezier"
-        exponential={true}
-        opacity={0.7}
-      />
-      <GradualBlur
-        target="page"
-        position="top"
-        height="6rem"
-        strength={2}
-        divCount={5}
-        curve="bezier"
-        exponential={true}
-        opacity={0.7}
-      />
-    </ReactLenis></section>
+        </section>
+      </ReactLenis>
+    </section>
   );
 }
