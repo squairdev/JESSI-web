@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "build": "vinext build",
+    "deploy": "vinext deploy",
+    "lint": "eslint",
+    "dev:vinext": "vite dev",
+    "build:vinext": "vite build"
   },
   "dependencies": {
     "gsap": "^3.14.2",
